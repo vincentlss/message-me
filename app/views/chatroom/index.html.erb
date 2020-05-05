@@ -1,6 +1,6 @@
 <h4 class="ui center aligned medium icon header">
   <i class="circular orange users icon"></i>
-  Say Something
+  MessageMe Chatting App
 </h4>
 
 <div class="ui two column grid">
@@ -26,12 +26,8 @@
 
     <div class="four wide column">
         <div class="ui vertical menu">
-            <a class="item">
-            <h4 class="ui header">Chatroom</h4>
-            </a>
-            <a class="item">
-            <h4 class="ui header">Own Messages</h4>
-            </a>
+            <%= link_to "Chatroom", root_path, class: "ui header small active item" %>
+            <%= link_to "Own Messages",  user_path(current_user), class: "ui header small item" %>
         </div>
     </div>
 </div>

@@ -1,0 +1,29 @@
+<h4 class="ui center aligned medium icon header">
+  <i class="circular orange users icon"></i>
+  MessageMe Chatting App
+</h4>
+
+<div class="ui two column grid">
+    <div class="twelve wide column">
+        <div class="ui fluid raised card chatbox">
+            <div class="content" id="messages">
+            <div class="ui relaxed divided list">
+            <% @messages.each do |message| %>
+                <div class="item">
+                    <p><strong><%= message.body %></strong></p>
+                    <em>sent <%= time_ago_in_words(message.created_at)%> ago</em>
+                </div>
+            <% end %>
+        </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="four wide column">
+        <div class="ui vertical menu">
+            <%= link_to "Chatroom", root_path, class: "ui header small item" %>
+            <%= link_to "Own Messages",  user_path(current_user), class: "ui header small active item" %>
+        </div>
+    </div>
+</div>
